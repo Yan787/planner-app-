@@ -6,8 +6,8 @@ import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'sonner'
 
+import { Heading } from '@/components/ui/Heading'
 import { Button } from '@/components/ui/buttons/Buttons'
-import Checkbox from '@/components/ui/checkbox'
 import { Field } from '@/components/ui/fields/Field'
 
 import { authService } from '@/services/authService'
@@ -15,6 +15,7 @@ import { authService } from '@/services/authService'
 import { DASHBOARD_PAGES } from '@/config/page-url.config'
 
 import { IAuthForm } from '@/types/auth.types'
+
 
 export default function Auth() {
 	const [isLoginForm, setIsLoginForm] = useState(false)
@@ -41,9 +42,10 @@ export default function Auth() {
 	return (
 		<div className="flex min-h-screen">
 			<form
-				className="w-1/4 m-auto shadow bg-sidebar rounded-xl p-layout"
+				className="w-1/4 m-auto shadow bg-sidebar rounded-xl p-layout border border-teal-600"
 				onSubmit={handleSubmit(onSubmit)}
 			>
+				<Heading title="Auth" />
 				<Field
 					id="email"
 					label="Email:"
@@ -54,8 +56,6 @@ export default function Auth() {
 						required: 'Email is required!',
 					})}
 				/>
-				<Checkbox color="green" />
-				<Checkbox color="red" />
 				<Field
 					id="password"
 					label="Password: "
