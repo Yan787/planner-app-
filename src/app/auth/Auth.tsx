@@ -16,7 +16,6 @@ import { DASHBOARD_PAGES } from '@/config/page-url.config'
 
 import { IAuthForm } from '@/types/auth.types'
 
-
 export default function Auth() {
 	const [isLoginForm, setIsLoginForm] = useState(false)
 	const { register, handleSubmit, reset } = useForm<IAuthForm>({

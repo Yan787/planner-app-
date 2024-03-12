@@ -7,7 +7,7 @@ export interface IProfileResponse {
 	statistics: {
 		label: string
 		value: string
-	}
+	}[]
 }
 
 class UserService {

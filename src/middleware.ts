@@ -17,13 +17,13 @@ export async function middleware(request: NextRequest, response: NextResponse) {
 		return NextResponse.next()
 	}
 
-	if (!refreshToken) {
-		return NextResponse.redirect(new URL('/auth', request.url))
-	}
+	// if (!refreshToken) {
+	// 	return NextResponse.redirect(new URL('/auth', request.url))
+	// }
 
 	return NextResponse.next()
 }
- 
+
 export const config = {
 	matcher: ['/i/:path*', '/auth/:path']
 }
